@@ -11,3 +11,7 @@ which vault &>/dev/null || {
   sudo chmod +x vault
   popd
 }
+
+which jq || {
+  sudo apt-get install jq
+}
