@@ -16,28 +16,25 @@ vagrant up
 
 ## Configure DB
 
-#### Connect to DB box: 
+Vagrant up will run `scripts/setup_mysql.sh` that will:
 
-`vagrant ssh db`
+- stop db and add skip grant tables option
+- to be able to set a new root password
+- set new password
+- create webappdb database
+- create vault user
+- set vault user password
+- set vault user grants
+- change root password
+- create db WEBAPPDB
+- create vault user
+- set mysql back to normal
 
-#### A temporary password is generated for the MySQL root user. Locate it in the mysqld.log with command:
 
-`sudo grep 'temporary password' /var/log/mysqld.log`
+New password:
+root - `sup3rPw#`
+vault - `1qaz@WSX3edc`
 
-#### Change MySQL root password with command:
-
-`sudo mysql_secure_installation`
-
-#### Craeate DB user for Vault to connect
-
-Connect to db with root: `mysql -u root -p`
-
-```
-CREATE DATABASE webappdb;
-CREATE USER 'vault'@'%' IDENTIFIED BY '1qaz@WSX3edc';
-GRANT ALL PRIVILEGES ON webappdb.* TO 'vault'@'%' WITH GRANT OPTION;
-GRANT CREATE USER ON *.* to 'vault'@'%';
-```
 
 ## Configure Vault
 
