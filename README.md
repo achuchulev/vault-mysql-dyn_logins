@@ -73,7 +73,7 @@ default_ttl="1h" \
 max_ttl="24h"
 ```
 
-#### Tell Vault to give us a new login to MySQL database
+## Tell Vault to generate a new login to MySQL database
 
 `vault read database/creds/mysqlrole`
 
