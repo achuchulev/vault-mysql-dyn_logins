@@ -2,6 +2,13 @@
 
 VAULT=0.11.4
 
+PKG="wget unzip"
+which ${PKG} &>/dev/null || {
+  export DEBIAN_FRONTEND=noninteractive
+  apt-get update
+  apt-get install -y ${PKG}
+}
+
 which vault &>/dev/null || {
   pushd /usr/local/bin
   [ -f vault_${VAULT}_linux_amd64.zip ] || {
@@ -13,5 +20,6 @@ which vault &>/dev/null || {
 }
 
 which jq || {
-  sudo apt-get install jq
+  apt-get update
+  sudo apt-get install -y jq
 }
