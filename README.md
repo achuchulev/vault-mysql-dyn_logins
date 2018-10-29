@@ -75,6 +75,8 @@ max_ttl="24h"
 
 ## Tell Vault to generate a new login to MySQL database
 
+From vagrant box, run:
+
 `vault read database/creds/mysqlrole`
 
 #### Test credentials
