@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ -d /vagrant ]; then
-  mkdir /vagrant/logs
+  mkdir -p /vagrant/logs
   LOG="/vagrant/logs/vault_${HOSTNAME}.log"
 else
   LOG="vault.log"
@@ -18,7 +18,7 @@ sudo /usr/local/bin/vault server  -dev -dev-listen-address=0.0.0.0:8200  &> ${LO
 echo vault started
 sleep 3 
 
-grep VAULT_ADDR ~/.bash_profile || {
+grep VAULT_ADDR ~/.bash_profile &>/dev/null || {
   echo export VAULT_ADDR=http://127.0.0.1:8200 | sudo tee -a ~/.bash_profile
 }
 
@@ -30,6 +30,6 @@ echo -e "\nvault token is on /root/.vault-token"
 sudo VAULT_ADDR="http://127.0.0.1:8200" vault secrets enable -version=1 kv
   
 # setup .bash_profile
-grep VAULT_TOKEN ~/.bash_profile || {
+grep VAULT_TOKEN ~/.bash_profile &>/dev/null || {
   echo export VAULT_TOKEN=\`cat /root/.vault-token\` | sudo tee -a ~/.bash_profile
 }
