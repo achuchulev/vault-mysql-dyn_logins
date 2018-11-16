@@ -65,7 +65,7 @@ password="1qaz@WSX3edc"
 ```
 vault write database/roles/mysqlrole \
 db_name=webappdb \
-creation_statements="CREATE USER '{{name}}'@'%' IDENTIFIED BY '{{password}}';GRANT ALL PRIVILEGES ON webappdb.* TO '{{name}}'@'%';" \
+creation_statements="CREATE USER '{{name}}'@'%' IDENTIFIED BY '{{password}}';GRANT ALL PRIVILEGES ON WEBAPPDB.* TO '{{name}}'@'%';" \
 default_ttl="1h" \
 max_ttl="24h"
 ```
