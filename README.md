@@ -121,7 +121,7 @@ vault token create -policy=mysql-policy
 Run command for consule-teplate to create config.yml with filled in credentials
 
 ```
-VAULT_TOKEN="h7bYwJfRw0uPf7QGTBXVmfws" consul-template -template="config.yml.tpl:config.yml" -once
+VAULT_TOKEN="h7bYwJfRw0uPf7QGTBXVmfws" consul-template -template="templates/config.yml.tpl:config.yml" -once
 ```
 
 Result `config.yml` file should be similar to:
