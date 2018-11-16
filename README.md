@@ -70,6 +70,17 @@ default_ttl="1h" \
 max_ttl="24h"
 ```
 
+#### Create new policies in Vault to control what a user can access
+
+```
+vault policy write mysql-policy -<<EOF
+# Get credentials from database backend
+path "database/creds/mysqlrole" {
+  capabilities = ["read"]
+}
+EOF
+```
+
 ## Tell Vault to generate a new login to MySQL database
 
 From vagrant box, run:
@@ -79,4 +90,48 @@ From vagrant box, run:
 #### Test credentials
 
 From db box, run: `mysql -u vaultnewuser -p` and provide the password that has been just genereted by Vault
+
+
+
+## Direct application integration with consule-template and envconsul tools
+
+### Consul-Template
+
+#### consul-template tool runs as a daemon which queries a Consul or Vault cluster and updates any number of specified templates on the file system
+
+Create a template file based on your application connection string with extension `.tpl`
+
+Example template `config.yml.tpl`
+
+```
+---
+{{- with secret "database/creds/mysqlrole" }}
+username: {{ .Data.username }}
+password: {{ .Data.password }}
+database: "MYWEBDBAPP"
+{{- end }}
+```
+
+Create vault token for consule-template
+
+```
+vault token create -policy=mysql-policy
+```
+
+Run command for consule-teplate to create config.yml with filled in credentials
+
+```
+VAULT_TOKEN="h7bYwJfRw0uPf7QGTBXVmfws" consul-template -template="config.yml.tpl:config.yml" -once
+```
+
+Result `config.yml` file should be similar to:
+
+```
+---
+username: v-token-mysqlrole-17OOCVpiprxlon
+password: A1a-47o3jbRX4hxmzsKg
+database: "MYWEBDBAPP"
+```
+
+### Envconsul
 
