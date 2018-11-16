@@ -97,7 +97,7 @@ From db box, run: `mysql -u vaultnewuser -p` and provide the password that has b
 
 ### Consul-Template
 
-#### consul-template tool runs as a daemon which queries a Consul or Vault cluster and updates any number of specified templates on the file system
+#### It runs as a daemon which queries a Consul or Vault cluster and updates any number of specified templates on the file system
 
 Create a template file based on your application connection string with extension `.tpl`
 
