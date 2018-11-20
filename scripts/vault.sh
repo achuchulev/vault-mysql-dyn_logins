@@ -35,4 +35,4 @@ grep VAULT_TOKEN ~/.bash_profile &>/dev/null || {
 }
 
 # add consul-template to $PATH
-PATH=$PATH:/vagrant/tools
+sudo echo "export PATH=$PATH:/vagrant/tools" >> /root/.bash_profile
