@@ -14,12 +14,6 @@ cd vault-mysql-dyn_logins
 vagrant up
 ```
 
-Vagrant up will run `scripts/provision.sh` that will:
-
-- install vault
-- install consul-template
-- install envconsul
-
 ## Configure DB
 
 Vagrant up will run `scripts/setup_mysql.sh` that will:
@@ -43,6 +37,12 @@ vault - `1qaz@WSX3edc`
 
 
 ## Configure Vault
+
+Vagrant up run `scripts/provision.sh` that:
+
+- install vault
+- install consul-template
+- install envconsul
 
 #### Connect to Vault box: 
 
