@@ -31,9 +31,10 @@ Vagrant up will run `scripts/setup_mysql.sh` that will:
 - set mysql back to normal
 
 
-New password:
-root - `sup3rPw#`
-vault - `1qaz@WSX3edc`
+New credentials:
+
+- mysql: root - `sup3rPw#`
+- vault: vault - `1qaz@WSX3edc`
 
 
 ## Configure Vault
@@ -150,7 +151,7 @@ database: "MYWEBDBAPP"
 
 #### It launches a subprocess with environment variables populated from HashiCorp Vault that are being populated dynamically and applications read them directly
 
-Sample `app.sh` with connection string:
+Sample `app.sh` application with connection string:
 
 ```
 #!/usr/bin/env bash
