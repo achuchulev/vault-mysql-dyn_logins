@@ -108,7 +108,7 @@ From db box, run: `mysql -u vaultnewuser -p` and provide the password that has b
 
 ## Direct Application Integration
 
-### Consul-Template
+### with Consul-Template
 
 #### It runs as a daemon which queries a Consul or Vault cluster and updates any number of specified templates on the file system
 
@@ -146,7 +146,7 @@ password: A1a-47o3jbRX4hxmzsKg
 database: "MYWEBDBAPP"
 ```
 
-### Envconsul
+### with Envconsul
 
 #### It launches a subprocess with environment variables populated from HashiCorp Vault that are being populated dynamically and applications read them directly
 
