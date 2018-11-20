@@ -38,11 +38,18 @@ vault - `1qaz@WSX3edc`
 
 ## Configure Vault
 
-Vagrant up run `scripts/provision.sh` that:
+Vagrant up run:
+
+`scripts/provision.sh` that:
 
 - install vault
 - install consul-template
 - install envconsul
+
+`scripts/vault.sh` that:
+
+- start vault
+- enable secret KV version 1
 
 #### Connect to Vault box: 
 
