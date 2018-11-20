@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 VAULT=0.11.4
+CONSULTEMPLATE=0.19.5
+ENVCONSUL=0.7.3
 
 # install some packages
 PKG="wget unzip jq vim"
