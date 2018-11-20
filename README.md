@@ -150,7 +150,7 @@ database: "MYWEBDBAPP"
 
 #### It launches a subprocess with environment variables populated from HashiCorp Vault that are being populated dynamically and applications read them directly
 
-Sample application with connection string:
+Sample `app.sh` with connection string:
 
 ```
 #!/usr/bin/env bash
