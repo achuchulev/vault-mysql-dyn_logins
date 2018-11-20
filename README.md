@@ -106,7 +106,7 @@ From db box, run: `mysql -u vaultnewuser -p` and provide the password that has b
 
 
 
-## Application integration
+## Direct Application Integration
 
 ### Consul-Template
 
