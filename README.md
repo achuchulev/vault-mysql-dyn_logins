@@ -149,7 +149,7 @@ database: "MYWEBDBAPP"
 
 ### with Envconsul
 
-#### It launches a subprocess with environment variables populated from HashiCorp Vault that are being populated dynamically and applications read them directly
+#### It launches a subprocess with environment variables populated from Vault that are being generated dynamically and applications can read them directly
 
 Sample `app.sh` application with connection string:
 
