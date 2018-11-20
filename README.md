@@ -135,7 +135,7 @@ vault token create -policy=mysql-policy
 Run command for consule-teplate to create config.yml with filled in credentials
 
 ```
-VAULT_TOKEN="vaul_token_from_previous_command" consul-template -template="templates/config.yml.tpl:config.yml" -once
+VAULT_TOKEN="vault_token_from_previous_command" consul-template -template="templates/config.yml.tpl:config.yml" -once
 ```
 
 Result `config.yml` file should be similar to:
@@ -173,5 +173,5 @@ vault token create -policy=mysql-policy
 Run command for envconsul to launch a subprocess with environment variables populated from Vault which application read and use
 
 ```
-VAULT_TOKEN="vaul_token_from_previous_command" envconsul -upcase -secret database/creds/mysqlrole ./app/app.sh
+VAULT_TOKEN="vault_token_from_previous_command" envconsul -upcase -secret database/creds/mysqlrole ./app/app.sh
 ```
