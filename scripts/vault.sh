@@ -33,6 +33,3 @@ sudo VAULT_ADDR="http://127.0.0.1:8200" vault secrets enable -version=1 kv
 grep VAULT_TOKEN ~/.bash_profile &>/dev/null || {
   echo export VAULT_TOKEN=\`cat /root/.vault-token\` | sudo tee -a ~/.bash_profile
 }
-
-# add consul-template to $PATH
-sudo echo "export PATH=$PATH:/vagrant/tools" >> /root/.bash_profile
