@@ -20,3 +20,25 @@ which vault &>/dev/null || {
   sudo chmod +x vault
   popd
 }
+
+# check consul-template binary
+which consul-template || {
+  pushd /usr/local/bin
+  [ -f consul-template_${CONSULTEMPLATE}_linux_amd64.zip ] || {
+    sudo wget https://releases.hashicorp.com/consul-template/${CONSULTEMPLATE}/consul-template_${CONSULTEMPLATE}_linux_amd64.zip
+  }
+  sudo unzip consul-template_${CONSULTEMPLATE}_linux_amd64.zip
+  sudo chmod +x consul-template
+  popd
+}
+
+# check envconsul binary
+which envconsul || {
+  pushd /usr/local/bin
+  [ -f envconsul_${ENVCONSUL}_linux_amd64.zip ] || {
+    sudo wget https://releases.hashicorp.com/envconsul/${ENVCONSUL}/envconsul_${ENVCONSUL}_linux_amd64.zip
+  }
+  sudo unzip envconsul_${ENVCONSUL}_linux_amd64.zip
+  sudo chmod +x envconsul
+  popd
+}
