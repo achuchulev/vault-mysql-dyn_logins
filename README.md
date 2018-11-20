@@ -87,7 +87,7 @@ path "database/creds/mysqlrole" {
 EOF
 ```
 
-## Tell Vault to generate a new login to MySQL database
+### Tell Vault to generate a new login to MySQL database
 
 From vagrant box, run:
 
@@ -99,7 +99,7 @@ From db box, run: `mysql -u vaultnewuser -p` and provide the password that has b
 
 
 
-## Direct application integration with consule-template and envconsul tools
+## Application integration
 
 ### Consul-Template
 
