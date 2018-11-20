@@ -3,7 +3,7 @@
 cat <<EOT
 My app connection string is:
 
-username: "${DATABASE_CREDS_MYSQLROLE.USERNAME}"
-password: "${DATABASE_CREDS_MYSQLROLE.PASSWORD}"
+username: "${DATABASE_CREDS_MYSQLROLE_USERNAME}"
+password: "${DATABASE_CREDS_MYSQLROLE_PASSWORD}"
 database: "MYWEBDBAPP"
 EOT
