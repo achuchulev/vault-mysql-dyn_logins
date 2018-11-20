@@ -141,7 +141,7 @@ database: "MYWEBDBAPP"
 
 ### Envconsul
 
-#### The tool launches a subprocess with environment variables populated from HashiCorp Vault that are being populated dynamically and applications read them directly
+#### It launches a subprocess with environment variables populated from HashiCorp Vault that are being populated dynamically and applications read them directly
 
 Example of application with connection string:
 
@@ -156,7 +156,7 @@ database: "MYWEBDBAPP"
 EOT
 ```
 
-Create vault token for consule-template
+Create vault token for envconsule
 
 ```
 vault token create -policy=mysql-policy
