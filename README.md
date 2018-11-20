@@ -135,3 +135,29 @@ database: "MYWEBDBAPP"
 
 ### Envconsul
 
+#### The tool launches a subprocess with environment variables populated from HashiCorp Vault that are being populated dynamically and applications read them directly
+
+Example of application with connection string:
+
+```
+#!/usr/bin/env bash
+
+cat <<EOT
+My app that has following connection string:
+username: "${DATABASE_CREDS_MYSQLROLE_USERNAME}"
+password: "${DATABASE_CREDS_MYSQLROLE_PASSWORD}"
+database: "MYWEBDBAPP"
+EOT
+```
+
+Create vault token for consule-template
+
+```
+vault token create -policy=mysql-policy
+```
+
+Run command for envconsul to launch a subprocess with environment variables populated from Vault which application read and use
+
+```
+VAULT_TOKEN="h7bYwJfRw0uPf7QGTBXVmfws" envconsul -upcase -secret database/creds/mysqlrole ./app/app.sh
+```
