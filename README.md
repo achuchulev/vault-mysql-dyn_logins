@@ -1,4 +1,4 @@
-# Use Vault to create dynamic logins to a mysql database so that an app will be able to use it for its database backend
+# Use Vault to create dynamic logins to a mysql database backend and Consul Template and Envconsul tools to integrate  application with Vault 
 
 ### Prerequisites
 
@@ -13,6 +13,12 @@ git clone https://github.com/achuchulev/vault-mysql-dyn_logins.git
 cd vault-mysql-dyn_logins
 vagrant up
 ```
+
+### Vagrant up will run `scripts/provision.sh` that will:
+
+- install vault
+- install consul-template
+- install envconsul
 
 ## Configure DB
 
