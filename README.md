@@ -14,7 +14,7 @@ cd vault-mysql-dyn_logins
 vagrant up
 ```
 
-### Vagrant up will run `scripts/provision.sh` that will:
+Vagrant up will run `scripts/provision.sh` that will:
 
 - install vault
 - install consul-template
